@@ -47,7 +47,7 @@ lvim.builtin.project.patterns = {
   "requirements.txt",
 }
 
-vim.opt.shell = "/bin/zsh"
+vim.opt.shell = "/bin/fish"
 lvim.format_on_save = true
 
 vim.o.linebreak = true
