@@ -20,11 +20,9 @@ local core_plugins = {
   },
   { --Discord Presence
     "andweeb/presence.nvim",
-    lazy = true
   },
   {
     "jose-elias-alvarez/typescript.nvim",
-    lazy = true
   },
   --Theme
   {
@@ -106,13 +104,13 @@ local core_plugins = {
   {
     "OmniSharp/omnisharp-vim",
   },
-  {
-    "dense-analysis/ale",
-    config = function()
-      vim.g.ale_shell = "fish"
-    end,
-    lazy = true,
-  },
+  -- {
+  --   "dense-analysis/ale",
+  --   config = function()
+  --     vim.g.ale_shell = "fish"
+  --   end,
+  --   lazy = true,
+  -- },
 
   ----------------------------------------
   {
@@ -491,4 +489,3 @@ if not vim.env.LVIM_DEV_MODE then
 end
 
 return core_plugins
-

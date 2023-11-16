@@ -1,3 +1,4 @@
+.ssr
 .android
 .cache
 .gitconfig
@@ -49,3 +50,7 @@ scripts
 Downloads
 Music
 tempfile
+Arduino
+.arduino15
+.arduinoIDE
+.erg
