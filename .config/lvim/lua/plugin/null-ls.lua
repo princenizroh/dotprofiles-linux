@@ -39,4 +39,4 @@ require("null-ls").register({
     },
     factory = helpers.formatter_factory,
   })
-})
+}) -- null-ls

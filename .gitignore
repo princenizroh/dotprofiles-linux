@@ -54,3 +54,5 @@ Arduino
 .arduino15
 .arduinoIDE
 .erg
+.org
+~/.local/share/lunarvim/lvim/lua/lvim

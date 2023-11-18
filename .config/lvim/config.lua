@@ -23,6 +23,7 @@ reload("plugin.copilot")
 reload("plugin.null-ls")
 vim.g.shell = '/usr/bin/fish'
 
+----
 -- ale plugins
 vim.g.ale_linters = {
   cs = { 'OmniSharp', 'mcs', 'mcsc' }
