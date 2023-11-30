@@ -40,7 +40,6 @@ systemmonitorrc
 Code
 kactivitymanagerdrc
 konsolerc
-nvim
 systemsettingsrc
 dconf
 karboncalligraphyrc
@@ -115,4 +114,10 @@ Arduino IDE
 MQTT-Explorer
 Postman
 arduino-ide
-
+kdenlive-appimagerc
+kdenlive-layoutsrc
+kdenliverc
+kfontviewrc
+obs-studio/
+ttyper/
+nvim.bak/

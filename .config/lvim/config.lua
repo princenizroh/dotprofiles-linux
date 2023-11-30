@@ -22,7 +22,7 @@ reload("plugin.neosolarized")
 reload("plugin.copilot")
 reload("plugin.null-ls")
 vim.g.shell = '/usr/bin/fish'
-
+vim.api.nvim_set_option('clipboard', 'unnamedplus')
 ----
 -- ale plugins
 vim.g.ale_linters = {
