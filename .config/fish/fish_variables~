@@ -1,7 +1,0 @@
-# This file contains fish universal variable definitions.
-# VERSION: 3.0
-SETUVAR _tide_left_items:\x1d
-SETUVAR _tide_prompt_212370:\x1b\x28B\x1b\x5bm\x1b\x28B\x1b\x5bm\x1e\x1b\x28B\x1b\x5bm\x1b\x28B\x1b\x5bm
-SETUVAR _tide_prompt_213382:\x1b\x28B\x1b\x5bm\x1b\x28B\x1b\x5bm\x1e\x1b\x28B\x1b\x5bm\x1b\x28B\x1b\x5bm
-SETUVAR _tide_right_items:\x1d
-SETUVAR fish_key_bindings:fish_default_key_bindings
