@@ -1,16 +1,16 @@
 #!/bin/bash
 echo "Need installation for sudo!!"
 echo "this is installation package for arch installation"
-echo "Before instalation update keyring"
-pacman -Sy archlinux-keyring && pacman -Syyu
 echo "Install arch package to root partition"
-echo -e "1. system \n2. desktop\n3. grub \n4. Utilities packages \n5. yay \n6. repo installer"
+echo -e "1. system \n2. desktop\n3. grub \n4. Utilities packages \n5. repo installer"
 echo -n "What do you want to install (numb / exit): "
 read install
 
 while [ $install != exit ]; do 
 
 	if  [[ "$install" == "1" ]]; then
+		echo "Before instalation update keyring"
+		pacman -Sy archlinux-keyring && pacman -Syyu
 		pacstrap -i /mnt base base-devel linux linux-lts linux-headers linux-firmware intel-ucode sudo nano vim git neofetch networkmanager dhcpcd pulseaudio bluez blueman bluez-utils github-cli
 		systemctl enable dhcpcd.service
 		systemctl enable NetworkManager.service
@@ -44,6 +44,9 @@ while [ $install != exit ]; do
 	fi
 
 	if  [[ "$install" == "4" ]]; then
+		echo "Updating"
+		sudo pacman -Syyu --noconfirm
+		echo "installing dependencies"
 		sudo pacman -S pipewire rsync ntfs-3g nvidia firefox brave-bin nvim unrar tar htop exfat-utils fuse-exfat zoxide wl-clipboard lazygit kitty kiten curl libreoffice-fresh gimp kdenlive audacity 
 		sudo pacman -S ufw
 		sudo ufw enable
@@ -51,13 +54,6 @@ while [ $install != exit ]; do
 	fi
 
 	if [[ "$install" == "5" ]]; then
-		git clone https://aur.archlinux.org/yay.git
-		cd yay
-		makepkg -si
-		yay --version
-	fi
-
-	if [[ "$install" == "6" ]]; then
 		echo "Installer from repository github"
 		echo -e "1. KDE Rounded Corner \n2. auto-cpufreq"
 		echo -n "What do you want to install (numb)"
@@ -85,8 +81,14 @@ while [ $install != exit ]; do
 			sudo ./auto-cpufreq-installer
 			sudo auto-cpufreq --install
 		fi
+		if [[ "$repository" == "3" ]]; then
+			git clone https://aur.archlinux.org/yay.git
+			cd yay
+			makepkg -si
+			yay --version
+		fi
 	fi
-	echo -e "1. system \n2. desktop\n3. grub \n4. Utilities packages \n5. yay \n6. repo installer"
+	echo -e "1. system \n2. desktop\n3. grub \n4. Utilities packages \n5. repo installer"
     	echo -n "What do you want installing (numb / exit): "
     	read install
 done
