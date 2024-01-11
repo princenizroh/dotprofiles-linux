@@ -1,13 +1,27 @@
 #!/bin/bash
+cat <<"EOF"
+
+-------------------
+        .                                                     
+       / \         
+      /^  \      
+     /  _  \    
+    /  | | ~\     
+   /.-'   '-.\                                  
+
+-------------------
+
+EOF
+
 echo "Need installation for sudo!!"
 echo "this is installation package for arch installation"
 echo "Install arch package to root partition"
 echo -e "1. system \n2. desktop\n3. grub \n4. Utilities packages \n5. repo installer"
-echo -n "What do you want to install (numb / exit): "
+echo -n "What do you want to install ('numb' / n): "
 read install
 
-while [ $install != exit ]; do 
-
+while [ $install != n ]; do 
+	echo ""
 	if  [[ "$install" == "1" ]]; then
 		echo "Before instalation update keyring"
 		pacman -Sy archlinux-keyring && pacman -Syyu
@@ -55,8 +69,8 @@ while [ $install != exit ]; do
 
 	if [[ "$install" == "5" ]]; then
 		echo "Installer from repository github"
-		echo -e "1. KDE Rounded Corner \n2. auto-cpufreq"
-		echo -n "What do you want to install (numb)"
+		echo -e "1. KDE Rounded Corner \n2. auto-cpufreq \n3. yay"
+		echo -n "What do you want to install ('numb'/ n): "
 		read repository
 
 		if [[ "$repository" == "1" ]]; then
@@ -81,6 +95,7 @@ while [ $install != exit ]; do
 			sudo ./auto-cpufreq-installer
 			sudo auto-cpufreq --install
 		fi
+
 		if [[ "$repository" == "3" ]]; then
 			git clone https://aur.archlinux.org/yay.git
 			cd yay
@@ -88,6 +103,7 @@ while [ $install != exit ]; do
 			yay --version
 		fi
 	fi
+	echo ""
 	echo -e "1. system \n2. desktop\n3. grub \n4. Utilities packages \n5. repo installer"
     	echo -n "What do you want installing (numb / exit): "
     	read install
