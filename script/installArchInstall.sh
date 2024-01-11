@@ -1,4 +1,5 @@
 #!/bin/bash
+dotfiles="$(pwd)/"
 cat <<"EOF"
 
 -------------------
@@ -60,7 +61,7 @@ case $install in
 		fi
 
 		{
-			install -Dm644 "$dotfiles/etc/default/grub" "/etc/default/grub"
+			cp -r "../etc/default/grub" "/etc/default/grub"
 		} || {
 			echo "Error Moving files"
 		}
