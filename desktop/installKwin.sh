@@ -3,15 +3,15 @@ dotfiles="$(pwd)/"
 
 {	
 	echo "This is Kwin setup"
-	echo -n "Do you want to skip the installation? [y/n]: "
-	read -r skip
+	echo -n "Do you want to install? [y/n]: "
+	read -r install
 
-	if [ -z "$skip" ]; then
+	if [ -z "$install" ]; then
 		echo "Invalid input or empty choice. Existing."
 		exit 1
 	fi
 
-	if [ $skip != "y" ]; then
+	if [ $install == "y" ]; then
 		echo "Updating"
 		sudo pacman -Syu --noconfirm
 		echo "Installing dependencies"
