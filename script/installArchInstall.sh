@@ -11,7 +11,7 @@ read install
 while [ $install != exit ]; do 
 
 	if  [[ "$install" == "1" ]]; then
-		pacstrap -i /mnt base base-devel linux linux-lts linux-headers linux-firmware intel-ucode sudo nano vim git neofetch networkmanager dhcpcd pulseaudio bluez blueman bluez-utils
+		pacstrap -i /mnt base base-devel linux linux-lts linux-headers linux-firmware intel-ucode sudo nano vim git neofetch networkmanager dhcpcd pulseaudio bluez blueman bluez-utils github-cli
 		systemctl enable dhcpcd.service
 		systemctl enable NetworkManager.service
 		systemctl enable bluetooth.service
