@@ -6,7 +6,7 @@ local config = function()
 	local cmp_nvim_lsp = require("cmp_nvim_lsp")
 	local lspconfig = require("lspconfig")
 	local capabilities = cmp_nvim_lsp.default_capabilities()
- 
+
 	for type, icon in pairs(diagnostic_signs) do
 		local hl = "DiagnosticSign" .. type
 		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
@@ -118,6 +118,37 @@ local config = function()
 		},
 	})
 
+	-- C#
+	lspconfig.omnisharp.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		handlers = {
+			["textDocument/definition"] = function(...)
+				return require("omnisharp_extended").handler(...)
+			end,
+		},
+		keys = {
+			{
+				"gd",
+				function()
+					require("omnisharp_extended").telescope_lsp_definitions()
+				end,
+				desc = "Goto Definition",
+			},
+		},
+		enable_roslyn_analyzers = true,
+		organize_imports_on_format = true,
+		enable_import_completion = true,
+		cmd = {
+			"omnisharp",
+			"--languageserver",
+		},
+		filetypes = {
+			"cs",
+		},
+		root_dir = lspconfig.util.root_pattern("*.csproj", "*.sln", ".git"),
+	})
+
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")
 	local flake8 = require("efmls-configs.linters.flake8")
@@ -131,7 +162,8 @@ local config = function()
 	local solhint = require("efmls-configs.linters.solhint")
 	local cpplint = require("efmls-configs.linters.cpplint")
 	local clangformat = require("efmls-configs.formatters.clang_format")
-
+	local mcs = require("efmls-configs.linters.mcs")
+	local dotnet_format = require("efmls-configs.formatters.dotnet_format")
 	-- configure efm server
 	lspconfig.efm.setup({
 		filetypes = {
@@ -153,6 +185,7 @@ local config = function()
 			"css",
 			"c",
 			"cpp",
+			"cs",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -182,24 +215,25 @@ local config = function()
 				css = { prettier_d },
 				c = { clangformat, cpplint },
 				cpp = { clangformat, cpplint },
+				c_sharp = { mcs, dotnet_format },
 			},
 		},
 	})
 end
 
 return {
-  {
-	"neovim/nvim-lspconfig",
-	config = config,
-	lazy = false,
-	dependencies = {
-		"windwp/nvim-autopairs",
-		"williamboman/mason.nvim",
-		"creativenull/efmls-configs-nvim",
-		"hrsh7th/nvim-cmp",
-		"hrsh7th/cmp-buffer",
-		"hrsh7th/cmp-nvim-lsp",
-    "folke/neoconf.nvim"
-    },
-  },
+	{
+		"neovim/nvim-lspconfig",
+		config = config,
+		lazy = false,
+		dependencies = {
+			"windwp/nvim-autopairs",
+			"williamboman/mason.nvim",
+			"creativenull/efmls-configs-nvim",
+			"hrsh7th/nvim-cmp",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-nvim-lsp",
+			"folke/neoconf.nvim",
+		},
+	},
 }

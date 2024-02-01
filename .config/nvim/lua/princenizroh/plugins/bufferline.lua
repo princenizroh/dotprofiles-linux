@@ -42,14 +42,6 @@ return {
 						bg = "#3c4464", -- dark slate blue
 					},
 				},
-				offsets = {
-					{
-						filetype = "NvimTree",
-						text = "File Explorer",
-						text_align = "center",
-						separator = true,
-					},
-				},
 			})
 		end,
 	},

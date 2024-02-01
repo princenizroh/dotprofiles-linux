@@ -1,6 +1,12 @@
 local opts = {
 	ensure_installed = {
-    "efm",
+		-- "black",
+		"clangd",
+		-- "csharpier",
+		"eslint",
+		-- "flake8",
+		-- "prettierd",
+		"efm",
 		"bashls",
 		"tsserver",
 		"tailwindcss",
