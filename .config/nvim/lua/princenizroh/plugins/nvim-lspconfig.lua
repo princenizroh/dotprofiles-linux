@@ -136,9 +136,13 @@ local config = function()
 				desc = "Goto Definition",
 			},
 		},
+		enable_editorconfig_support = true,
+		enable_ms_build_load_projects_on_demand = true,
+		sdk_include_prerelease = true,
 		enable_roslyn_analyzers = true,
 		organize_imports_on_format = true,
 		enable_import_completion = true,
+		analyze_open_documents_only = true,
 		cmd = {
 			"omnisharp",
 			"--languageserver",

@@ -13,6 +13,7 @@ local coding_plugin = {
 		"lukas-reineke/indent-blankline.nvim",
 		lazy = false,
 		main = "ibl",
+		opts = {},
 	},
 	{ -- Highlight
 		"RRethy/vim-illuminate",
@@ -24,6 +25,9 @@ local coding_plugin = {
 	},
 	{ -- LSP
 		"folke/neodev.nvim",
+	},
+	{
+		"mbbill/undotree",
 	},
 }
 return coding_plugin

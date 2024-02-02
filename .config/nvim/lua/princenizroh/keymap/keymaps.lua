@@ -5,7 +5,7 @@ local mapkey = require("princenizroh.util.keymapper").mapvimkey
 
 -- Nvim Tree
 -- Directory Navigation
-mapkey("n", "<leader>e", ":NvimTreeToggle<CR>")
+mapkey("<leader>e", ":NvimTreeToggle<CR>", "n")
 
 -- Zen Mode
 api.nvim_set_keymap("n", "<leader>zn", ":TZNarrow<CR>", {})
@@ -16,15 +16,15 @@ api.nvim_set_keymap("n", "<leader>za", ":TZAtaraxis<CR>", {})
 
 -- Neorg
 -- Notes
-mapkey("n", "<leader>ng", "Neorg workspace notes")
+mapkey("<leader>ng", "Neorg workspace notes", "n")
 
 -- Indenting
 keymap.set("v", "<", "<gv", opts)
 keymap.set("v", ">", ">gv", opts)
 
 -- Buffer Navigation
-mapkey("n", "<leader>bb", "e #") -- Switch to Other Buffer
-mapkey("n", "<leader>`", "e #") -- Switch to Other Buffer
+mapkey("<leader>bb", "e #", "n") -- Switch to Other Buffer
+mapkey("<leader>`", "e #", "n") -- Switch to Other Buffer
 
 -- Don't yank with x
 keymap.set("n", "x", '"_x')
@@ -40,9 +40,9 @@ keymap.set("n", "dw", 'vb"_d')
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
 -- New tab
-mapkey("n", "te", ":tabedit")
-mapkey("n", "ss", ":split<Return><C-w>w")
-mapkey("n", "sv", ":vsplit<Return><C-w>w")
+mapkey("te", ":tabedit", "n")
+mapkey("ss", ":split<Return><C-w>w", "n")
+mapkey("sv", ":vsplit<Return><C-w>w", "n")
 keymap.set("n", "<Tab>", "gt")
 keymap.set("n", "<S-Tab>", "gT")
 

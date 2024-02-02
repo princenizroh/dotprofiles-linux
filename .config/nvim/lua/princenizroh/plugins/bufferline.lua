@@ -41,6 +41,13 @@ return {
 						fg = "#fdf6e3", -- light yellow
 						bg = "#3c4464", -- dark slate blue
 					},
+					modified = {
+						-- fg = "#fdf6e3", -- light yellow
+						bg = "#3c4464", -- dark slate blue
+					},
+					modified_selected = {
+						fg = "#58c0db", -- light blue
+					},
 				},
 			})
 		end,
