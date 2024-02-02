@@ -38,11 +38,10 @@ return {
 						bg = "#1c2438", -- dark navy blue
 					},
 					duplicate = {
-						fg = "#fdf6e3", -- light yellow
+						fg = "#7da3f0", -- light yellow
 						bg = "#3c4464", -- dark slate blue
 					},
 					modified = {
-						-- fg = "#fdf6e3", -- light yellow
 						bg = "#3c4464", -- dark slate blue
 					},
 					modified_selected = {
