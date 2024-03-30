@@ -1,5 +1,5 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+
 end
 
 zoxide init fish | source
@@ -10,6 +10,15 @@ zoxide init fish | source
 alias cd=z
 
 
+# # Handy change dir shortcuts
+# abbr .. 'cd ..'
+# abbr ... 'cd ../..'
+# abbr .3 'cd ../../..'
+# abbr .4 'cd ../../../..'
+# abbr .5 'cd ../../../../..'
+#
+# # Always mkdir a path (this doesn't inhibit functionality to make a single dir)
+# abbr mkdir 'mkdir -p'
 
 
 
