@@ -192,6 +192,7 @@ local config = function()
 	local clangformat = require("efmls-configs.formatters.clang_format") -- C, C++
 	local mcs = require("efmls-configs.linters.mcs") -- C#
 	local dotnet_format = require("efmls-configs.formatters.dotnet_format") -- C#
+
 	-- configure efm server
 	lspconfig.efm.setup({
 		filetypes = {
@@ -231,7 +232,7 @@ local config = function()
 			languages = {
 				lua = { luacheck, stylua },
 				python = { flake8, black },
-				typescript = { eslint, prettier_d },
+				typescript = { eslint_d, prettier_d },
 				json = { eslint_d, fixjson },
 				jsonc = { eslint_d, fixjson },
 				sh = { shellcheck, shfmt },
