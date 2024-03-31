@@ -7,6 +7,7 @@ local opts = {
 		-- "cpplint",
 		"csharp_ls",
 		"efm",
+		"eslint",
 		-- "eslint_d",
 		"emmet_ls",
 		-- "fixjson",

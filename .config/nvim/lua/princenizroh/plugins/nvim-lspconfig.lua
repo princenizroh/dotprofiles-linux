@@ -37,6 +37,12 @@ local config = function()
 			["textDocument/definition"] = function(...)
 				return require("omnisharp_extended").handler(...)
 			end,
+			["textDocument/references"] = function(...)
+				return require("omnisharp-extended").handler(...)
+			end,
+			["textDocument/implementation"] = function(...)
+				return require("omnisharp-extended").handler(...)
+			end,
 		},
 		keys = {
 			{
@@ -45,6 +51,20 @@ local config = function()
 					require("omnisharp_extended").telescope_lsp_definitions()
 				end,
 				desc = "Goto Definition",
+			},
+			{
+				"gr",
+				function()
+					require("omnisharp_extended").telescope_lsp_references()
+				end,
+				desc = "Goto References",
+			},
+			{
+				"gi",
+				function()
+					require("omnisharp_extended").telescope_lsp_implementation()
+				end,
+				desc = "Goto Implementation",
 			},
 		},
 		enable_editorconfig_support = true,
@@ -60,8 +80,9 @@ local config = function()
 		},
 		filetypes = {
 			"cs",
+			"vb",
 		},
-		root_dir = lspconfig.util.root_pattern("*.csproj", "*.sln", ".git"),
+		root_dir = lspconfig.util.root_pattern("*.csproj", "*.sln", ".git", "omnisharp.json", "function.js"),
 	})
 
 	-- docker
