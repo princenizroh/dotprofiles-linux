@@ -25,7 +25,7 @@ local opts = {
 		-- "shfmt",
 		-- "solhint",
 		"solidity",
-		"tsserver",
+		-- "tsserver",
 		"tailwindcss",
 	},
 
