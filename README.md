@@ -43,29 +43,29 @@ This is packages i use
 
 `yay -S glibc alsa-lib gcc-libs gconf libnotify nspr nss libxss libxtst libc++ glibc-locales`
 
-# Lua
+### Lua
 npm install -g luacheck
 cargo install stylua
 
-# Python
+### Python
 pip install flake8 black
 
-# JavaScript/TypeScript
+### JavaScript/TypeScript
 npm install -g eslint_d fixjson
 npm install -g josephfrazier/prettier_d
 
-# Shell
+### Shell
 brew install shellcheck shfmt  # macOS
 sudo apt install shellcheck shfmt  # Debian/Ubuntu
 sudo pacman -S shellcheck shfmt  # Arch Linux
 
-# Rust
+### Rust
 rustup component add rustfmt
 
-# Docker
+### Docker
 npm install -g hadolint
 
-# Solidity
+### Solidity
 npm install -g solhint
 
 # C/C++
