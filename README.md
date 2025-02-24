@@ -10,6 +10,12 @@ This is for linux.
 
 - [General info] #general-info
   Neovim >=0.9.0
+- If getting error omnisharp use :MasonInstall omnisharp@v1.39.8
+- or git clone https://github.com/OmniSharp/omnisharp-roslyn
+- cd omnisharp-roslyn
+- git checkout b2e64c6 -- $(find . -name CSharpDiagnosticWorkerWithAnalyzers.cs)
+- dotnet build --configuration Release
+- source : https://github.com/OmniSharp/omnisharp-roslyn/issues/2574
 
 ## Packages
 
