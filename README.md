@@ -43,6 +43,10 @@ This is packages i use
 
 `yay -S glibc alsa-lib gcc-libs gconf libnotify nspr nss libxss libxtst libc++ glibc-locales`
 
+`sudo pacman -S bluez, blueman, blue-z`
+
+`yay -S signal-desktop unityhub discord alacritty ani-cli audacity kdenlive okular wps-office obsidian brave-bin neovim neofetch git`
+
 ### Lua
 npm install -g luacheck
 cargo install stylua
@@ -78,6 +82,4 @@ sudo pacman -S clang  # Arch Linux
 npm install -g mcs
 
 
-`sudo pacman -S bluez, blueman, blue-z`
 
-`yay -S signal-desktop unityhub discord alacritty ani-cli audacity kdenlive okular wps-office obsidian brave-bin neovim neofetch git`
