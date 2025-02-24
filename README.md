@@ -75,8 +75,7 @@ sudo apt install clang-format  # Debian/Ubuntu
 sudo pacman -S clang  # Arch Linux
 
 # C#
-dotnet tool install --global mcs
-dotnet tool install --global dotnet-format
+npm install -g mcs
 
 
 `sudo pacman -S bluez, blueman, blue-z`
