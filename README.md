@@ -3,7 +3,7 @@
 <hr>
 
 This is for linux.
-
+Neovim linux or windows
 ## Technologies
 
 <hr>
