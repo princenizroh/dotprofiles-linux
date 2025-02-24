@@ -68,13 +68,13 @@ npm install -g hadolint
 ### Solidity
 npm install -g solhint
 
-# C/C++
+### C/C++
 npm install -g cpplint
 brew install clang-format  # macOS
 sudo apt install clang-format  # Debian/Ubuntu
 sudo pacman -S clang  # Arch Linux
 
-# C#
+### C#
 npm install -g mcs
 
 
