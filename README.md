@@ -23,6 +23,7 @@ This is packages i use
 ## Installation
 
 <hr>
+
 `sudo pacman -S tree-sitter-cli`
 
 `sudo pacman -S github-cli lazygit bat fzf grep ripgrep exa zoxide`
